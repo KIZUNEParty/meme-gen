@@ -1,6 +1,8 @@
 import './style.css'
+const { createCanvas, loadImage } = require('canvas')
 
 document.querySelector('#app').innerHTML = `
   <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
+  <canvas id="outP" width="200" height="100" style="border:1px solid #000000;">
+  </canvas>
 `
