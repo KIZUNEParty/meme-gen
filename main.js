@@ -8,14 +8,12 @@ document.querySelector('#app').innerHTML = `
   <h1><i style="color: #F8F835;">คำคมสอนมึง Generator</i></h1>
   <form>
     <input type="text" placeholder="img URL" id="uURI" name="uURI">
-    <button type="submit">Submit</button>
+    <button type="submit" id="submit">Submit</button>
   </form>
   <br />
   <canvas id="canvas" width="`+ width +`" height="`+ height +`" style="border:1px solid whitesmoke;">
   </canvas>
 `
-
-const URI = document.getElementById('uURI').value
 
 // Canvas Part
 const canvas = document.getElementById('canvas')
@@ -25,11 +23,19 @@ const ctx = canvas.getContext('2d');
 ctx.fillStyle = '#fff'
 ctx.fillRect(0,0, width, height)
 
-const img = new Image
-img.onload = function() {
-  ctx.drawImage(img,0,0);
+var btn = document.getElementById('submit');
+btn.addEventListener('click', func);
+
+function func() {
+  console.log(document.getElementById("uURI").value)
+  const URI = document.getElementById('uURI').value
+
+  const img = new Image
+  img.src = URI
+  img.onload = function() {
+    ctx.drawImage(img,0,0);
+  }
 }
-img.src = URI
 
 // Gradient
 const grd = ctx.createLinearGradient(0, 600, 0, 0);
