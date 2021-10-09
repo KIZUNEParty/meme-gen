@@ -8,6 +8,8 @@ document.querySelector('#app').innerHTML = `
   <canvas id="canvas" width="`+ width +`" height="`+ height +`" style="border:1px solid whitesmoke;">
   </canvas>
 `
+
+// Canvas Part
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d');
 
@@ -17,8 +19,8 @@ ctx.fillRect(0,0, width, height)
 
 
 // Gradient
-const grd = ctx.createLinearGradient(0, 0, 0, 200);
-grd.addColorStop(0, "rbga(0,0,0,1)")
-grd.addColorStop(1, "rgba(0,0,0,0)")
+const grd = ctx.createLinearGradient(0, 600, 0, 0);
+grd.addColorStop(0, 'rgba(0,0,0,0.9)')
+grd.addColorStop(1, 'transparent')
 ctx.fillStyle = grd
 ctx.fillRect(0,0, width, height)
