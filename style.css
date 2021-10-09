@@ -13,6 +13,14 @@ form {
   color: whitesmoke;
 }
 
+input[type="text"] {
+  background: whitesmoke;
+  color: #242424;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
 button[type="submit"] {
   background: whitesmoke;
   color: #242424;
