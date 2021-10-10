@@ -1,4 +1,5 @@
 import './style.css'
+import {loadImage} from 'canvas'
 
 const width = "600";
 const height = "600";
@@ -19,8 +20,8 @@ document.querySelector('#app').innerHTML = `
   <button id="add3">Add text 3</button>
   <br />
   <br />
-  <button id="banner">Add Banner KNB</button>
-  <button id="banner">Add Banner 3Chad</button>
+  <button id="bannerKNB">Add Banner KNB</button>
+  <button id="banner3chad">Add Banner 3Chad</button>
   <br />
   <br />
 
@@ -99,4 +100,17 @@ a3.onclick = function() {
   const localX3 = width - 30
   const localY3 = height - (height/7.5)
   ctx.fillText(inp3, localX3, localY3)
+}
+
+// Banner add
+const KNB = document.getElementById('bannerKNB')
+// const chad = document.getElementById('banner3chad')
+
+async function KNBB() {
+  const KNBi = await loadImage('./src/knb.png')
+  ctx.drawImage(KNBi, 10, 0)
+}
+
+KNB.onclick = function() {
+  KNBB()
 }
