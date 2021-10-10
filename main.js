@@ -107,7 +107,7 @@ const KNB = document.getElementById('bannerKNB')
 // const chad = document.getElementById('banner3chad')
 
 async function KNBB() {
-  const KNBi = await loadImage('./src/knb.png')
+  const KNBi = await loadImage('https://media.discordapp.net/attachments/879923131064668170/896560475385512016/knb.png')
   ctx.drawImage(KNBi, 10, 0)
 }
 
