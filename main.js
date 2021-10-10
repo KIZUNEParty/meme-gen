@@ -8,18 +8,22 @@ document.querySelector('#app').innerHTML = `
   <h1><i style="color: #F8F835;">คำคมสอนมึง Generator</i></h1>
   <input type="file" id="input"/>
   <br />
+  <input type="text" id="txt1" placeholder="text 1" />
   <br />
-  <textarea type="text" id="textup" cols="50" rows="3" placeholder="text 1">
-  </textarea>
+  <input type="text" id="txt2" placeholder="text 2" />
+  <br />
+  <input type="text" id="txt3" placeholder="text 3" />
   <br />
   <button id="add1">Add text 1</button>
+  <button id="add2">Add text 2</button>
+  <button id="add3">Add text 3</button>
+  <br />
+  <br />
+  <button id="banner">Add Banner KNB</button>
+  <button id="banner">Add Banner 3Chad</button>
+  <br />
   <br />
 
-  <input type="text" id="textdown" placeholder="text 2" />
-  <br />
-  <button id="add2">Add text 2</button>
-  <br />
-  <br />
   <canvas id="canvas" width="`+ width +`" height="`+ height +`" style="border:1px solid whitesmoke;">
   </canvas>
 `
@@ -61,24 +65,38 @@ ctx.fillRect(0,0, width, height)
 // text upper
 const a1 = document.getElementById('add1')
 const a2 = document.getElementById('add2')
+const a3 = document.getElementById('add3')
+
+
 a1.onclick = function() {  
-  const inp1 = document.getElementById('textup').value
+  const inp1 = document.getElementById('txt1').value
 
   ctx.font="Italic 30px Sarabun"
   ctx.fillStyle = "yellow"
   ctx.textAlign = "left"
-  const localX1 = 10
+  const localX1 = 30
   const localY1 = height - (height/4)
   ctx.fillText(inp1, localX1, localY1)
 }
 
 a2.onclick = function() {
-  const inp2 = document.getElementById('textdown').value
+  const inp2 = document.getElementById('txt2').value
+
+  ctx.font="Italic 30px Sarabun"
+  ctx.fillStyle = "yellow"
+  ctx.textAlign = "left"
+  const localX2 = 30
+  const localY2 = height - (height/5.5)
+  ctx.fillText(inp2, localX2, localY2)
+}
+
+a3.onclick = function() {
+  const inp3 = document.getElementById('txt3').value
 
   ctx.font="Italic 20px Sarabun"
   ctx.fillStyle = "yellow"
   ctx.textAlign = "right"
-  const localX2 = width - (width/4.5)
-  const localY2 = height - (height/5.5)
-  ctx.fillText(inp2, localX2, localY2)
+  const localX3 = width - 30
+  const localY3 = height - (height/7.5)
+  ctx.fillText(inp3, localX3, localY3)
 }
