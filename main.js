@@ -8,10 +8,15 @@ document.querySelector('#app').innerHTML = `
   <h1><i style="color: #F8F835;">คำคมสอนมึง Generator</i></h1>
   <input type="file" id="input"/>
   <br />
-  <span class="label">Text: </span><input type="text" id="textup" />
+  <br />
+  <textarea type="text" id="textup" cols="50" rows="3" placeholder="text 1">
+  </textarea>
+  <br />
   <button id="add1">Add text 1</button>
   <br />
-  <span class="label">Text: </span><input type="text" id="textdown" />
+
+  <input type="text" id="textdown" placeholder="text 2" />
+  <br />
   <button id="add2">Add text 2</button>
   <br />
   <br />
@@ -54,24 +59,25 @@ ctx.fillStyle = grd
 ctx.fillRect(0,0, width, height)
 
 // text upper
-ctx.font="Italic 30px Sarabun"
 const a1 = document.getElementById('add1')
-const a1 = document.getElementById('add1')
+const a2 = document.getElementById('add2')
+a1.onclick = function() {  
+  const inp1 = document.getElementById('textup').value
 
-const inp1 = document.getElementById('textup').value
-const inp2 = document.getElementById('textdown').value
-
-a1.onclick = function() {
-  ctx.fillStyle = "yellow";
-  ctx.textAlign = "left";
-  const localX1 = width / 4.5
+  ctx.font="Italic 30px Sarabun"
+  ctx.fillStyle = "yellow"
+  ctx.textAlign = "left"
+  const localX1 = 10
   const localY1 = height - (height/4)
   ctx.fillText(inp1, localX1, localY1)
 }
 
 a2.onclick = function() {
-  ctx.fillStyle = "yellow";
-  ctx.textAlign = "left";
+  const inp2 = document.getElementById('textdown').value
+
+  ctx.font="Italic 20px Sarabun"
+  ctx.fillStyle = "yellow"
+  ctx.textAlign = "right"
   const localX2 = width - (width/4.5)
   const localY2 = height - (height/5.5)
   ctx.fillText(inp2, localX2, localY2)
